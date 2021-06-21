@@ -42,18 +42,18 @@ public class AddFunds extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36));
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Add Funds");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(130, 10, 270, 50);
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 14));
         jLabel2.setText("Amount to added :");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(60, 90, 180, 20);
 
-        jTextField1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jTextField1.setFont(new java.awt.Font("Comic Sans MS", 0, 14));
         jTextField1.setForeground(new java.awt.Color(153, 153, 153));
         jTextField1.setText("Enter amount....");
         jTextField1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -66,7 +66,7 @@ public class AddFunds extends javax.swing.JFrame {
         jTextField1.setBounds(200, 90, 210, 27);
 
         jButton1.setBackground(new java.awt.Color(255, 0, 51));
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 16));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/click image.png"))); // NOI18N
         jButton1.setText("PROCEED FOR PAYMENT");
         jPanel1.add(jButton1);
@@ -85,17 +85,11 @@ public class AddFunds extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
         );
 
         pack();
