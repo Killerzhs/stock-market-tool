@@ -53,7 +53,7 @@ public class AddFunds extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(60, 90, 180, 20);
 
-        jTextField1.setFont(new java.awt.Font("Comic Sans MS", 0, 14));
+        jTextField1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(153, 153, 153));
         jTextField1.setText("Enter amount....");
         jTextField1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -66,9 +66,14 @@ public class AddFunds extends javax.swing.JFrame {
         jTextField1.setBounds(200, 90, 210, 27);
 
         jButton1.setBackground(new java.awt.Color(255, 0, 51));
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 16));
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/click image.png"))); // NOI18N
         jButton1.setText("PROCEED FOR PAYMENT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1);
         jButton1.setBounds(60, 140, 350, 150);
 
@@ -103,6 +108,10 @@ public class AddFunds extends javax.swing.JFrame {
 this.setVisible(false);
        new Dashboard().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
     * @param args the command line arguments
