@@ -123,6 +123,8 @@ public class login extends javax.swing.JFrame {
             if(rs.next())
             {
                 JOptionPane.showMessageDialog(null, "Welcome " + t1.getText(), "Successful Login", JOptionPane.PLAIN_MESSAGE);
+                this.setVisible(false);
+       new Dashboard().setVisible(true);
             }
          else
             {
