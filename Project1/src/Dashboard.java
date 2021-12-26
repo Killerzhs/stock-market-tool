@@ -13,7 +13,11 @@
  *
  * @author user
  */
-import net.proteanit.sql.DbUtils;
+
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.sql.*;
 import javax.swing.JOptionPane;
 public class Dashboard extends javax.swing.JFrame {
@@ -113,7 +117,7 @@ private void DisplayTable()
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/stock image.png"))); // NOI18N
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 130, 100));
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 48));
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("DASHBOARD");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 330, 80));
@@ -171,8 +175,8 @@ private void DisplayTable()
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 766, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 766, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -191,10 +195,7 @@ private void DisplayTable()
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 828, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(29, 29, 29)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -215,8 +216,18 @@ this.setVisible(false);
 }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-this.setVisible(false);
-       new BuyAndSell().setVisible(true);        // TODO add your handling code here:
+//this.setVisible(false);
+  //     new BuyAndSell().setVisible(true);
+     Desktop browser = Desktop.getDesktop();
+     try{
+         browser.browse(new URI("https://www.youtube.com/watch?v=Ik9XDzzomcw"));
+     }
+     catch(IOException err){
+
+     }
+     catch(URISyntaxException err){
+
+     }
 }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

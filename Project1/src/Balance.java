@@ -50,13 +50,13 @@ public class Balance extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(160, 10, 0, 70);
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 2, 48)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 2, 48));
         jLabel2.setText("CHECK BALANCE");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(150, 10, 410, 60);
 
         jButton2.setBackground(new java.awt.Color(0, 0, 255));
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 18));
         jButton2.setText("Withdraw funds");
         jPanel1.add(jButton2);
         jButton2.setBounds(360, 250, 230, 31);
@@ -66,14 +66,14 @@ public class Balance extends javax.swing.JFrame {
         jButton3.setBounds(503, 340, 100, 23);
 
         jButton1.setBackground(new java.awt.Color(51, 102, 255));
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18));
         jButton1.setText("Add Funds");
         jPanel1.add(jButton1);
         jButton1.setBounds(80, 250, 260, 31);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/20348019.jpg"))); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 2, 14));
         jLabel3.setText("Your Available Balance");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -108,7 +108,7 @@ public class Balance extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
         );
 
         pack();

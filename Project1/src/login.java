@@ -55,7 +55,7 @@ public class login extends javax.swing.JFrame {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bull.png"))); // NOI18N
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 1, 36));
+        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Stock Management Tool");
         jLabel7.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -87,7 +87,7 @@ public class login extends javax.swing.JFrame {
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
         jPanel2.add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 170, 30));
 
-        jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 12));
         jButton1.setText("LOGIN");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
