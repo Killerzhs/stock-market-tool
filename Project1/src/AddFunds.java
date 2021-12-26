@@ -13,6 +13,8 @@
  *
  * @author Lakshya
  */
+import java.sql.*;
+import javax.swing.JOptionPane;
 public class AddFunds extends javax.swing.JFrame {
 
     /** Creates new form AddFunds */
@@ -32,7 +34,7 @@ public class AddFunds extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        t1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -53,17 +55,17 @@ public class AddFunds extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(60, 90, 180, 20);
 
-        jTextField1.setFont(new java.awt.Font("Comic Sans MS", 0, 14));
-        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField1.setText("Enter amount....");
-        jTextField1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        t1.setFont(new java.awt.Font("Comic Sans MS", 0, 14));
+        t1.setForeground(new java.awt.Color(153, 153, 153));
+        t1.setText("Enter amount....");
+        t1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        t1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                t1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(200, 90, 210, 27);
+        jPanel1.add(t1);
+        t1.setBounds(200, 90, 210, 27);
 
         jButton1.setBackground(new java.awt.Color(255, 0, 51));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 16));
@@ -100,9 +102,9 @@ public class AddFunds extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void t1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_t1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 this.setVisible(false);
@@ -110,7 +112,19 @@ this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/portfolio","root","tiger");
+            Statement stmt=con.createStatement();
+            float add = Float.parseFloat(t1.getText());
+            String sql = "insert into balance values("+add+");";
+            stmt.executeUpdate(sql);
+      JOptionPane.showMessageDialog(null,"YOUR AMOUNT HAS BEEN ADDED");
+  }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -130,7 +144,7 @@ this.setVisible(false);
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField t1;
     // End of variables declaration//GEN-END:variables
 
 }

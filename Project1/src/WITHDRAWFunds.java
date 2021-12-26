@@ -13,6 +13,8 @@
  *
  * @author Lakshya
  */
+import java.sql.*;
+import javax.swing.JOptionPane;
 public class WITHDRAWFunds extends javax.swing.JFrame {
 
     /** Creates new form AddFunds */
@@ -32,7 +34,7 @@ public class WITHDRAWFunds extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        t1 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
@@ -42,7 +44,7 @@ public class WITHDRAWFunds extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36));
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Withdraw Funds");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 330, 50));
@@ -51,16 +53,16 @@ public class WITHDRAWFunds extends javax.swing.JFrame {
         jLabel2.setText("Amount to Withdraw:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 180, 20));
 
-        jTextField1.setFont(new java.awt.Font("Comic Sans MS", 0, 14));
-        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField1.setText("Enter amount....");
-        jTextField1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        t1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        t1.setForeground(new java.awt.Color(153, 153, 153));
+        t1.setText("Enter amount....");
+        t1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        t1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                t1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 210, -1));
+        jPanel1.add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 210, -1));
 
         jButton2.setText("CANCEL");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -95,9 +97,9 @@ public class WITHDRAWFunds extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void t1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_t1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 this.setVisible(false);
@@ -105,7 +107,19 @@ this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+         try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/portfolio","root","tiger");
+            Statement stmt=con.createStatement();
+            float add = Float.parseFloat(t1.getText());
+            String sql = "insert into balance values("+add+");";
+            stmt.executeUpdate(sql);
+      JOptionPane.showMessageDialog(null,"YOUR AMOUNT HAS BEEN ADDED");
+  }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
 }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -125,7 +139,7 @@ this.setVisible(false);
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField t1;
     // End of variables declaration//GEN-END:variables
 
 }

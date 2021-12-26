@@ -43,8 +43,8 @@ public class login extends javax.swing.JFrame {
         t1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         pswd1 = new javax.swing.JPasswordField();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -55,7 +55,7 @@ public class login extends javax.swing.JFrame {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bull.png"))); // NOI18N
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 1, 36));
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Stock Management Tool");
         jLabel7.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -98,11 +98,15 @@ public class login extends javax.swing.JFrame {
 
         jLabel5.setText("FORGET PASSWORD ??");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 130, 20));
-
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14));
-        jLabel9.setText("SIGNUP HERE");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
         jPanel2.add(pswd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 170, 30));
+
+        jButton2.setText("sign up here");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 30, 330, 370));
 
@@ -138,6 +142,11 @@ public class login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.setVisible(false);
+       new NewUser().setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -151,6 +160,7 @@ public class login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -159,7 +169,6 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField pswd1;

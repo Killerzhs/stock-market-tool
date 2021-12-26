@@ -18,6 +18,7 @@ import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import net.proteanit.sql.DbUtils;
 import java.sql.*;
 import javax.swing.JOptionPane;
 public class Dashboard extends javax.swing.JFrame {
@@ -41,6 +42,7 @@ private void DisplayTable()
         {
             JOptionPane.showMessageDialog(null, e);
         }
+
     }
     /** This method is called from within the constructor to
      * initialize the form.
@@ -63,7 +65,7 @@ private void DisplayTable()
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        t1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         textArea1 = new java.awt.TextArea();
@@ -92,12 +94,17 @@ private void DisplayTable()
         tb1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         tb1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tb1.setDropMode(javax.swing.DropMode.INSERT_ROWS);
+        tb1.setEnabled(false);
         jScrollPane1.setViewportView(tb1);
+        tb1.getColumnModel().getColumn(0).setHeaderValue("Title 1");
+        tb1.getColumnModel().getColumn(1).setHeaderValue("Title 2");
+        tb1.getColumnModel().getColumn(2).setHeaderValue("Title 3");
+        tb1.getColumnModel().getColumn(3).setHeaderValue("Title 4");
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 397, 500));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 397, 490));
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 24));
+        jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jButton2.setText("Open New Trade");
         jButton2.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +124,7 @@ private void DisplayTable()
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/stock image.png"))); // NOI18N
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 130, 100));
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 48));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("DASHBOARD");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 330, 80));
@@ -125,18 +132,18 @@ private void DisplayTable()
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/wallet logo png.png"))); // NOI18N
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 90, 90));
 
-        jTextField2.setFont(new java.awt.Font("Comic Sans MS", 1, 36));
-        jTextField2.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField2.setText("Your Balance");
-        jTextField2.setCaretColor(new java.awt.Color(153, 153, 153));
-        jTextField2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        t1.setEditable(false);
+        t1.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        t1.setForeground(new java.awt.Color(153, 153, 153));
+        t1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        t1.setCaretColor(new java.awt.Color(153, 153, 153));
+        t1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        t1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                t1ActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 350, 110));
+        jPanel3.add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 350, 110));
 
         jButton1.setBackground(new java.awt.Color(255, 0, 51));
         jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 18));
@@ -201,9 +208,27 @@ private void DisplayTable()
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-}//GEN-LAST:event_jTextField2ActionPerformed
+    private void t1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t1ActionPerformed
+         try
+         {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/portfolio","root","tiger");
+            int sum = 0;
+        Statement st = con.createStatement();
+        ResultSet res = st.executeQuery("SELECT SUM(amount) FROM balance");
+        while (res.next())
+           {
+        int c = res.getInt(1);
+        sum = sum + c;
+        String str = Integer.toString(sum);
+        t1.setText(str);
+           }
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+}//GEN-LAST:event_t1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 this.setVisible(false);
@@ -255,7 +280,7 @@ this.setVisible(false);
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField t1;
     private javax.swing.JTable tb1;
     private java.awt.TextArea textArea1;
     // End of variables declaration//GEN-END:variables
