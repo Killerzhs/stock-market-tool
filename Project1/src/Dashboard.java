@@ -68,7 +68,6 @@ private void DisplayTable()
         t1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        textArea1 = new java.awt.TextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,10 +100,10 @@ private void DisplayTable()
         tb1.getColumnModel().getColumn(2).setHeaderValue("Title 3");
         tb1.getColumnModel().getColumn(3).setHeaderValue("Title 4");
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 397, 490));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 397, 290));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(204, 204, 204));
+        jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 24));
         jButton2.setText("Open New Trade");
         jButton2.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -112,11 +111,11 @@ private void DisplayTable()
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 670, 240, 50));
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 570, 240, 50));
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 680, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/open new trade.png"))); // NOI18N
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 650, -1, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 550, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 51, 51));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -133,7 +132,7 @@ private void DisplayTable()
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 90, 90));
 
         t1.setEditable(false);
-        t1.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        t1.setFont(new java.awt.Font("Comic Sans MS", 1, 36));
         t1.setForeground(new java.awt.Color(153, 153, 153));
         t1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         t1.setCaretColor(new java.awt.Color(153, 153, 153));
@@ -164,7 +163,6 @@ private void DisplayTable()
             }
         });
         jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 160, 50));
-        jPanel3.add(textArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 350, 260));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -182,8 +180,8 @@ private void DisplayTable()
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -200,7 +198,7 @@ private void DisplayTable()
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 828, Short.MAX_VALUE)
+            .addGap(0, 702, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -245,7 +243,7 @@ this.setVisible(false);
   //     new BuyAndSell().setVisible(true);
      Desktop browser = Desktop.getDesktop();
      try{
-         browser.browse(new URI("https://www.youtube.com/watch?v=Ik9XDzzomcw"));
+         browser.browse(new URI("file:///D:/minor%20project/DOGE.html#home"));
      }
      catch(IOException err){
 
@@ -282,7 +280,6 @@ this.setVisible(false);
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField t1;
     private javax.swing.JTable tb1;
-    private java.awt.TextArea textArea1;
     // End of variables declaration//GEN-END:variables
 
 }

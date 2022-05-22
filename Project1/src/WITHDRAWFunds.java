@@ -111,10 +111,13 @@ this.setVisible(false);
             Class.forName("com.mysql.jdbc.Driver");
             Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/portfolio","root","tiger");
             Statement stmt=con.createStatement();
-            float add = Float.parseFloat(t1.getText());
-            String sql = "insert into balance values("+add+");";
+            float fund = Float.parseFloat(t1.getText());
+
+            String sql = "UPDATE balance SET amount = '"+fund+"' - amount;";
             stmt.executeUpdate(sql);
-      JOptionPane.showMessageDialog(null,"YOUR AMOUNT HAS BEEN ADDED");
+      JOptionPane.showMessageDialog(null,"YOUR AMOUNT HAS BEEN DEDUCTED");
+      this.setVisible(false);
+       new Dashboard().setVisible(true);
   }
         catch(Exception e)
         {
